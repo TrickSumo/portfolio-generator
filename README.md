@@ -30,7 +30,9 @@ Function URL Config=>
 
 4. Create S3 bucket and use OAI + Cloudfront to make it publicaly available. Also update bucket name and cloudfront distribution id in lambda functions
 
-5. Install REACT dependecies and run
+5. Create DynamoDB table with "email_hash" as partition key. Update dataase name in creator and destroyer functions.
+
+6. Install REACT dependecies and run
 
 ``` 
 npm i
