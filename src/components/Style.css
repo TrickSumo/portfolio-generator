@@ -1,0 +1,136 @@
+.AppHeader {
+  text-align: center;
+  background-color: blanchedalmond;
+  color: black;
+  border-radius: 90px;
+  display: float;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-weight: 500;
+  
+}
+
+
+
+.form {
+  text-align: center;
+}
+
+.form-element-top {
+  background-color: rgb(255, 253, 251);
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.form-element-bottom {
+  background-color: rgb(215, 237, 250);
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+a {
+  color: red;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: rgb(54, 38, 196);
+}
+
+
+.submitButton {
+  color: black;
+  background-color: rgb(20, 134, 228);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  padding:10px;
+}
+.submitButton:hover {
+  background-color: rgb(157, 107, 221);
+}
+
+.submitButton:disabled {
+  background-color: rgb(110, 181, 240);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: lighter;
+}
+
+.addTask {
+  background-color: #ccc;
+}
+
+.addTask > input {
+  justify-content: center;
+
+  align-items: center;
+  margin-bottom: 100px;
+}
+.addTaskButton {
+  background-color: rgb(115, 197, 99);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: lighter;
+  justify-content: center;
+
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+
+  margin-bottom: 0px;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  color: #895ed8;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  /* flex-grow: 1; */
+  flex-basis: 33%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.error {
+  display: inline;
+  text-align: right;
+  color: red;
+  font-size: 16px;
+}
+
+.noerror {
+  display: inline;
+  text-align: right;
+  color: rgb(10, 86, 136);
+  font-size: 16px;
+}
+
+img {
+  border: 5px solid #555;
+  border-radius: 50%;
+}
+
+
+.task {
+  font-size: 0.6em;
+  background-color: #eed796;
+  cursor: pointer;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  background-color: aquamarine;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 9px;
+}
