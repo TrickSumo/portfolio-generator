@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
 """
+Created on Sat May 28 20:04:13 2022
+
+@author: Rishi
+"""
+# -*- coding: utf-8 -*-
+"""
 Created on Tue May 17 20:35:30 2022
 
 @author: Rishi
@@ -10,6 +16,7 @@ import boto3
 from boto3.dynamodb.conditions import Key
 
 s3 = boto3.client('s3')
+dynamodb = boto3.resource('dynamodb', region_name="us-east-1")
 
 
 bucket = 'portfolio-generator-user-data-v2'
@@ -18,7 +25,8 @@ table = dynamodb.Table('profile_records')
 
 def lambda_handler(event, context):
 
-    data=json.loads(event['body'])
+    body=json.loads(event['body'])
+    data=body
     
     
     name = data['name']
@@ -162,13 +170,13 @@ def lambda_handler(event, context):
             }
             
     
-    # Dynamodb Table Fetchin Existing Data
+    # Dynamodb Table Fetching Existing Data
     
     try:
        
         
         
-        dynamodb = boto3.resource('dynamodb', region_name="us-east-1")
+        
         
         data=[]
         data1 = table.get_item( Key={'email_hash':hash})['Item']
@@ -189,6 +197,10 @@ def lambda_handler(event, context):
         data = list(set(data))
         
         table.update_item(   Key={ 'email_hash':hash},  UpdateExpression = 'SET profileTag = :data', ExpressionAttributeValues = {':data':data} )
+        
+        # table.update_item(   Key={ 'email_hash':hash},  UpdateExpression = 'SET {} = :body'.format(profileTag), ExpressionAttributeValues = {':body':body} )
+        # https://stackoverflow.com/questions/69107050/update-key-values-in-dynamodb-map-where-key-has-whitespaces --- fix for spaces in profileTag
+        table.update_item(   Key={ 'email_hash':hash},   UpdateExpression = 'SET #tag = :body', ExpressionAttributeNames={'#tag': '{}'.format(profileTag)}, ExpressionAttributeValues = {':body':body} )
         
         print(f'added attributes {data}')
        
@@ -213,5 +225,4 @@ def lambda_handler(event, context):
         
         
         }
-
 
