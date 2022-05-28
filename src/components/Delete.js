@@ -118,7 +118,8 @@ const Delete = () => {
     };
 
     if (isAuthenticated && !isLoading && !isInitialSetUpDone) initialSetup();
-  }, []);
+    else console.log('Loading data from server for your profile!!!')
+  }, [isLoading]);
 
   return (
     <>

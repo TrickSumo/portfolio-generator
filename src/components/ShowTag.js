@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { Link } from 'react-router-dom'
 
 const ShowTag = ({ tag, index, deleteTag, email, setToDelete }) => {
   var md5 = require("md5");
@@ -33,6 +34,7 @@ const ShowTag = ({ tag, index, deleteTag, email, setToDelete }) => {
         <a href={url} target="_blank" rel="noreferrer">
           View
         </a>{" "}
+        <Link to = {`/edit/${tag}`}>Edit</Link>
       </span>
       <span>
         <button

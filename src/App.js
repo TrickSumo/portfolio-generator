@@ -8,6 +8,7 @@ import Form3 from "./components/Form3";
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import EditProfile from "./components/EditProfile";
 
 
 export const MyContext = createContext();
@@ -58,8 +59,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/form2" element = {<Form2/>} />
           <Route path="/form3" element = {<Form3/>} />
-         
-          <Route path="delete" element={<Delete />} />
+          
+          <Route path="/edit/:tag" element = {<EditProfile/>} />
+          <Route path="/delete" element={<Delete />} />
         </Routes>
       </MyContext.Provider>
 
