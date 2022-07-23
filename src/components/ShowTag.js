@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 const ShowTag = ({ tag, index, deleteTag, email, setToDelete }) => {
   var md5 = require("md5");
   const hash = md5(email);
-  const url = "https://portfolio2.tricksumo.com/" + hash + tag + ".html";
+  const url = process.env.REACT_APP_PORTFOLIO_URL + hash + tag + ".html";
+//   const url = "https://portfolio2.tricksumo.com/" + hash + tag + ".html";
 
   return (
     <div
