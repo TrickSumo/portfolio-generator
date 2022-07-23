@@ -11,7 +11,7 @@ Portfolio generator using REACT, AUTH0 and AWS S3, CloudFront, Lambda, DynamoDB
 * cloudFront_cache_invalidator --> CreateInvalidation For CloudFront
 * porfolio_destroyer ----> S3 Full Write Access, DynamoDB Full Access
 * portfolio_creator  ----> S3 Full Write Access, DynamoDB Full Access
-* portfolio_editor  ----> S3 Full Write Access, DynamoDB Full Access
+* portfolio_editor  ---->  DynamoDB Full Access
 * s3_signed_url ---------> S3 Full Access
 
 2. Update lamda function URL settings for all 3:-
