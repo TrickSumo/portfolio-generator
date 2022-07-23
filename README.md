@@ -6,7 +6,7 @@ Portfolio generator using REACT, AUTH0 and AWS S3, CloudFront, Lambda, DynamoDB
 
 
 
-1. Create 3 AWS Lambda Functions wit following Permissios (Content of functions is in AWS Lambda folder):- 
+1. Create 3 AWS Lambda Functions with following Permissios (Content of functions is in AWS Lambda folder):- 
 
 * cloudFront_cache_invalidator --> CreateInvalidation For CloudFront
 * porfolio_destroyer ----> S3 Full Write Access
@@ -30,9 +30,28 @@ Function URL Config=>
 
 4. Create S3 bucket and use OAI + Cloudfront to make it publicaly available. Also update bucket name and cloudfront distribution id in lambda functions
 
-5. Create DynamoDB table with "email_hash" as partition key. Update dataase name in creator and destroyer functions.
+5. Add below CORS policy in s3 bucket (Bucket >> Permissions >> Cross-origin resource sharing (CORS))
 
-6. Install REACT dependecies and run
+[
+    {
+        "AllowedHeaders": [
+            "*"
+        ],
+        "AllowedMethods": [
+            "PUT",
+            "POST"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": [],
+        "MaxAgeSeconds": 3000
+    }
+]
+
+6. Create DynamoDB table with "email_hash" as partition key. Update database name in creator and destroyer functions.
+
+7. Install REACT dependecies and run
 
 ``` 
 npm i
