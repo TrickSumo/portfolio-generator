@@ -30,7 +30,7 @@ Function URL Config=>
 
 4. Create S3 bucket and use OAI + Cloudfront to make it publicaly available. Also update bucket name and cloudfront distribution id in lambda functions
 
-5. Add below CORS policy in s3 bucket (Bucket >> Permissions >> Cross-origin resource sharing (CORS))
+5. Add below CORS policy in s3 bucket (Bucket >> Permissions >> Cross-origin resource sharing (CORS)):-
 
 [
     {
