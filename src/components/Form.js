@@ -56,6 +56,8 @@ const Form = () => {
   const [isUploadEnabled, setIsUploadEnabled] = useState(false);
   const [fileName, setFileName] = useState('');
 
+  const [isImageUploaded, setIsImageUploaded] = useState(false)
+
   const api = process.env.REACT_APP_GET_S3_SIGNED_URL_API_URL
 
 
@@ -92,6 +94,7 @@ const Form = () => {
         setThumbnailURL(process.env.REACT_APP_PORTFOLIO_URL+hash+profileTag+".jpeg");
         setIsValidThumbnailURL(true);
         setSubmitEnabled(true)
+        setIsImageUploaded(true)
       })
       .catch((error) => console.log(error));
   };
@@ -185,7 +188,7 @@ const Form = () => {
           
           </div>
 
-          {email || !isSubmitEnabled ? (
+          {isImageUploaded || !isSubmitEnabled ? (
             isValidThumbnailURL ? (
               <span className="noerror"> <br/>✅ Image Uploaded</span>
             ) : (
