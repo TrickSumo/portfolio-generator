@@ -64,7 +64,8 @@ const Header = () => {
           marginBottom: "15px",
         }}
       >
-        <Link to="/delete">| MY Portfolios </Link>
+        <Link to="/">| Create | </Link>
+        <Link to="/delete">MY Portfolios</Link>
       </span>
       <span style={{ fontSize: "200%", fontWeight: "bold" }}>
         {" "}
